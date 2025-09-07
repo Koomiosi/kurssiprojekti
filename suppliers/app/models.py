@@ -8,6 +8,9 @@ class Supplier(models.Model):
     email = models.EmailField(max_length=100, default='sahkoposti@esimerkki.com')
     country = models.CharField(max_length=50, default='maa')
 
+    def __str__(self):
+        return f"{self.companyname} from {self.country}"
+
 class Product(models.Model):
     productname = models.CharField(max_length=100, default='tuote')
     supplier = models.ForeignKey(Supplier, on_delete=models.CASCADE)
@@ -18,3 +21,6 @@ class Product(models.Model):
     unitsonorder = models.IntegerField(default=0)
     reorderlevel = models.IntegerField(default=0)
     discontinued = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.productname} produced by {self.supplier.companyname}"
