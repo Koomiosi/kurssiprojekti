@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from .views import landingview,supplierslistview,productslistview
+from .views import landingview,supplierslistview,productslistview,addsupplier
 
 
 urlpatterns = [
@@ -10,5 +10,7 @@ urlpatterns = [
 
     path('suppliers/', supplierslistview),
     
-    path('products/', productslistview)
+    path('products/', productslistview),
+
+    path('add-supplier/', addsupplier)
 ]

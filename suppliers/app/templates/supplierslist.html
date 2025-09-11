@@ -4,11 +4,11 @@
 
 <br>
 <div id ="add-div"></div>
-<br
+<br>
 
-    <h1>Suppliers list</h1>
+<h1>Suppliers</h1>
 
-    <button id="add-btn" class="btn btn-success btn-sm" onclick="showaddform()">Add new supplier</button>
+<button id="add-btn" class="btn btn-success btn-sm" onclick="showaddform()">Add new supplier</button>
     
 {% for s in suppliers %}
     <div class="card" style="max-width: 50rem;">
@@ -27,6 +27,7 @@
 
 <script>
 
+// muuttuja alustus
     let x = `
     <h2 style="color: lightblue">Please fill in form</h2>
     
@@ -48,6 +49,7 @@
         </div>
     </div>`
 
+    // Metodit jotka näyttää tai piilottaa lomakkeen
     function showaddform() {
         document.getElementById("add-div").innerHTML = x
     }
